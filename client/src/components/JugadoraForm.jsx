@@ -36,15 +36,15 @@ const JugadoraForm = ({ onAdd }) => {
          </Button>
 
          <Modal show={showModal} onHide={() => setShowModal(false)}>
-            <Modal.Header closeButton>
+            <Modal.Header>
                <Modal.Title>Añadir Jugadora</Modal.Title>
             </Modal.Header>
             <Modal.Body>
                <form onSubmit={handleSubmit}>
-                  <input type='text' placeholder='Nombre' value={nombre} onChange={(e) => setNombre(e.target.value)} />
-                  <input type='text' placeholder='Posición' value={posicion} onChange={(e) => setPosicion(e.target.value)} />
-                  <input type='text' placeholder='Equipo' value={equipo} onChange={(e) => setEquipo(e.target.value)} />
-                  <input type='number' placeholder='Goles' value={goles} onChange={(e) => setGoles(e.target.value)} />
+                  <input className='formMedW mb-3' type='text' placeholder='Nombre' value={nombre} onChange={(e) => setNombre(e.target.value)} />
+                  <input className='formcuartW mb-3' type='number' placeholder='Goles' value={goles} onChange={(e) => setGoles(e.target.value)} />
+                  <input className=' mb-3' type='text' placeholder='Posición' value={posicion} onChange={(e) => setPosicion(e.target.value)} />
+                  <input className=' mb-3' type='text' placeholder='Equipo' value={equipo} onChange={(e) => setEquipo(e.target.value)} />
                </form>
             </Modal.Body>
             <Modal.Footer>
