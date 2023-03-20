@@ -35,7 +35,7 @@ export const List = () => {
    return (
       <>
          <HeaderNav></HeaderNav>
-         <PageBanner></PageBanner>
+         <PageBanner name='Lista de Jugadoras'></PageBanner>
          <div className='container'>
             <div className='row mt-5 mb-4 '>
                <div className='col-lg-6 col-12 '>

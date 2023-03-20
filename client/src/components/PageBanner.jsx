@@ -1,12 +1,12 @@
 import React from "react";
 
-export const PageBanner = () => {
+export const PageBanner = ({ name }) => {
    return (
       <>
          <section className='page-banner'>
             <div className='container'>
                <div className='page-title-wrapper'>
-                  <h1 className='page-title'>Lista de Jugadoras</h1>
+                  <h1 className='page-title'>{name}</h1>
 
                   <ul className='bradcurmed'>
                      <li>
