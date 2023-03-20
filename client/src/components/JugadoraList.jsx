@@ -3,6 +3,7 @@ import axios from "axios";
 import { Button } from "react-bootstrap";
 import { Card, Col, Row } from "react-bootstrap";
 import JugadoraForm from "./JugadoraForm";
+import { Footer } from "./Footer";
 
 const JugadoraList = ({ jugadoras, onEdit, onDelete }) => {
    const [showEditModal, setShowEditModal] = useState(false);
@@ -35,7 +36,7 @@ const JugadoraList = ({ jugadoras, onEdit, onDelete }) => {
 
    return (
       <>
-         <Row xs={1} sm={2} md={4}>
+         <Row xs={1} sm={2} md={4} className='mb-5 w-100'>
             {jugadoras.map((jugadora) => (
                <Col key={jugadora._id} className='mb-4'>
                   <Card>

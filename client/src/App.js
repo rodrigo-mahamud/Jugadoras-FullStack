@@ -1,11 +1,12 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { Button } from "react-bootstrap";
-
+import "bootstrap/dist/css/bootstrap.min.css";
 import JugadoraForm from "./components/JugadoraForm";
 import JugadoraList from "./components/JugadoraList";
 import { PageBanner } from "./components/PageBanner";
 import { HeaderNav } from "./components/HeaderNav";
+import { Footer } from "./components/Footer";
 
 const App = () => {
    const [jugadoras, setJugadoras] = useState([]);
@@ -43,7 +44,7 @@ const App = () => {
                   <h2>Estadísticas</h2>
                </div>
                <div className='col-6 d-flex justify-content-end'>
-                  <Button variant='primary' onClick={() => setShowAddModal(true)}>
+                  <Button className='mr-5' variant='primary' onClick={() => setShowAddModal(true)}>
                      Añadir Jugadora
                   </Button>
                </div>
@@ -53,6 +54,7 @@ const App = () => {
                <JugadoraList jugadoras={jugadoras} onEdit={handleEditJugadora} onDelete={handleDeleteJugadora} />
             </div>
          </div>
+         <Footer></Footer>
       </>
    );
 };

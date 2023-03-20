@@ -3223,7 +3223,7 @@ Download Two
   ##  Footer
   --------------------------------------------------------------*/
 #footer {
-   background: #fdf8f8;
+   background: #ffffff;
 }
 #footer .footer-inner {
    padding: 116px 0 62px;
@@ -3307,7 +3307,7 @@ Download Two
    color: #b5b3be;
 }
 #footer.footer-app .footer-menu li a:hover {
-   color: #000d61;
+   color: #ffffff;
 }
 .btn-secondary {
    color: #6c757d !important;
