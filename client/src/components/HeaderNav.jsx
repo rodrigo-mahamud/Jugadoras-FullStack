@@ -1,6 +1,6 @@
 import React from "react";
 import { useEffect } from "react";
-import { Link, BrowserRouter } from "react-router—dom";
+import { Link } from "react-router-dom";
 import $ from "jquery";
 
 export const HeaderNav = () => {
@@ -223,60 +223,58 @@ export const HeaderNav = () => {
    }, []);
 
    return (
-      <BrowserRouter>
-         <header className='site-header header-eight header_trans-fixed' data-top='992'>
-            <div className='container'>
-               <div className='header-inner'>
-                  <div className='site-mobile-logo'>
-                     <Link as={Link} to='/pages/index.html' className='logo'>
+      <header className='site-header header-eight header_trans-fixed' data-top='992'>
+         <div className='container'>
+            <div className='header-inner'>
+               <div className='site-mobile-logo'>
+                  <Link as={Link} to='/pages/home' className='logo'>
+                     <img src='logo-two.png' alt='site logo' className='main-logo' />
+                     <img src='logo-two.png' alt='site logo' className='sticky-logo' />
+                  </Link>
+               </div>
+               <div className='toggle-menu'>
+                  <span className='bar'></span>
+                  <span className='bar'></span>
+                  <span className='bar'></span>
+               </div>
+               <nav className='site-nav nav-two'>
+                  <div className='close-menu'>
+                     <span>Close</span>
+                     <i className='ei ei-icon_close'></i>
+                  </div>
+                  <div className='site-logo'>
+                     <Link as={Link} to='/pages/home' className='logo'>
                         <img src='logo-two.png' alt='site logo' className='main-logo' />
                         <img src='logo-two.png' alt='site logo' className='sticky-logo' />
                      </Link>
                   </div>
-                  <div className='toggle-menu'>
-                     <span className='bar'></span>
-                     <span className='bar'></span>
-                     <span className='bar'></span>
+                  <div className='menu-wrapper' data-top='992'>
+                     <ul className='site-main-menu'>
+                        <li>
+                           <Link as={Link} to='/home'>
+                              Portada
+                           </Link>
+                        </li>
+                        <li>
+                           <Link as={Link} to='/list'>
+                              Jugadoras
+                           </Link>
+                        </li>
+                        <li>
+                           <Link as={Link} to='/partidos'>
+                              Lista de Partidos
+                           </Link>
+                        </li>
+                        <li>
+                           <Link as={Link} to='/contact'>
+                              contacto
+                           </Link>
+                        </li>
+                     </ul>
                   </div>
-                  <nav className='site-nav nav-two'>
-                     <div className='close-menu'>
-                        <span>Close</span>
-                        <i className='ei ei-icon_close'></i>
-                     </div>
-                     <div className='site-logo'>
-                        <Link as={Link} to='/pages/index.html' className='logo'>
-                           <img src='logo-two.png' alt='site logo' className='main-logo' />
-                           <img src='logo-two.png' alt='site logo' className='sticky-logo' />
-                        </Link>
-                     </div>
-                     <div className='menu-wrapper' data-top='992'>
-                        <ul className='site-main-menu'>
-                           <li>
-                              <Link as={Link} to='/pages/index.html'>
-                                 Portada
-                              </Link>
-                           </li>
-                           <li>
-                              <Link as={Link} to='/pages/list.html'>
-                                 Jugadoras
-                              </Link>
-                           </li>
-                           <li>
-                              <Link as={Link} to='/pages/partidos.html'>
-                                 Lista de Partidos
-                              </Link>
-                           </li>
-                           <li>
-                              <Link as={Link} to='/pages/contact.html'>
-                                 contacto
-                              </Link>
-                           </li>
-                        </ul>
-                     </div>
-                  </nav>
-               </div>
+               </nav>
             </div>
-         </header>
-      </BrowserRouter>
+         </div>
+      </header>
    );
 };

@@ -36,7 +36,7 @@ const JugadoraList = ({ jugadoras, onEdit, onDelete }) => {
 
    return (
       <>
-         <Row xs={1} sm={2} md={4} className='mb-5 w-100'>
+         <Row xs={1} sm={2} md={4} className='mb-5 w-100 cards'>
             {jugadoras.map((jugadora) => (
                <Col key={jugadora._id} className='mb-4'>
                   <Card>

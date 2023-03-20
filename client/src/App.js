@@ -1,5 +1,5 @@
 import "bootstrap/dist/css/bootstrap.min.css";
-import { BrowserRouter, Navigate, Routes, Route } from "react-router—dom";
+import { BrowserRouter, Navigate, Routes, Route } from "react-router-dom";
 import { Footer } from "./components/Footer";
 import { HeaderNav } from "./components/HeaderNav";
 
@@ -16,9 +16,9 @@ const App = () => {
             <Routes>
                <Route path='/' element={<HeaderNav></HeaderNav>}></Route>
                <Route index element={<Home></Home>}></Route>
-               <Route path='list ' element={<List></List>}></Route>
-               <Route path='maches ' element={<Maches></Maches>}></Route>
-               <Route path='contact ' element={<Contact></Contact>}></Route>
+               <Route path='list' element={<List></List>}></Route>
+               <Route path='maches' element={<Maches></Maches>}></Route>
+               <Route path='contact' element={<Contact></Contact>}></Route>
                <Route path='*' element={<Navigate replace to='/'></Navigate>}></Route>
             </Routes>
          </BrowserRouter>

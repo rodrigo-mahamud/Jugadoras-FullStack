@@ -1,5 +1,10 @@
 import React from "react";
+import { HeaderNav } from "../components/HeaderNav";
 
 export const Maches = () => {
-   return <div>Maches</div>;
+   return (
+      <>
+         <HeaderNav></HeaderNav>
+      </>
+   );
 };

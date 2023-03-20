@@ -1,58 +1,11 @@
 import React from "react";
+import { HeaderNav } from "../components/HeaderNav";
 
 export const Home = () => {
    return (
       <>
+         <HeaderNav></HeaderNav>
          <div id='main_content'>
-            <header className='site-header header-two toggle-light header_trans-fixed' data-top='992'>
-               <div className='container'>
-                  <div className='header-inner'>
-                     <div className='site-mobile-logo'>
-                        <span href='index.html' className='logo'>
-                           <img src='assets/img/main-logo.png' alt='site logo' className='main-logo' />
-                           <img src='assets/img/logo-two.png' alt='site logo' className='sticky-logo' />
-                        </span>
-                     </div>
-
-                     <div className='toggle-menu'>
-                        <span className='bar'></span>
-                        <span className='bar'></span>
-                        <span className='bar'></span>
-                     </div>
-
-                     <nav className='site-nav nav-two'>
-                        <div className='close-menu'>
-                           <span>Cerrar</span>
-                           <i className='ei ei-icon_close'></i>
-                        </div>
-
-                        <div className='site-logo'>
-                           <span href='index.html' className='logo'>
-                              <img src='assets/img/logo-two.png' alt='site logo' className='main-logo' />
-                              <img src='assets/img/logo-two.png' alt='site logo' className='sticky-logo' />
-                           </span>
-                        </div>
-
-                        <div className='menu-wrapper' data-top='992'>
-                           <ul className='site-main-menu'>
-                              <li>
-                                 <span href='index.html'>Portada</span>
-                              </li>
-                              <li>
-                                 <span href='list.html'>Jugadoras</span>
-                              </li>
-                              <li>
-                                 <span href='partidos.html'>Lista de Partidos</span>
-                              </li>
-                              <li>
-                                 <span href='contact.html'>Contacto</span>
-                              </li>
-                           </ul>
-                        </div>
-                     </nav>
-                  </div>
-               </div>
-            </header>
             <section className='banner banner-four'>
                <div className='container'>
                   <div className='banner-content-wrap-four'>
@@ -80,7 +33,7 @@ export const Home = () => {
 
                         <div className='col-lg-4 col-md-5'>
                            <div className='promo-mockup wow pixFadeUp text-center'>
-                              <img src='media/banner/mobile.png' className='wow pixZoomIn' alt='mpckup' />
+                              <img src='mobile.png' className='wow pixZoomIn' alt='mpckup' />
                            </div>
                         </div>
                      </div>
@@ -122,111 +75,9 @@ export const Home = () => {
 
                      <div className='col-lg-5'>
                         <div className='about-thumb wow pixFadeRight' data-wow-delay='0.6s'>
-                           <img src='media/about/1.jpg' alt='about' />
+                           <img src='1.jpg' alt='about' />
                         </div>
                      </div>
-                  </div>
-               </div>
-            </section>
-
-            <section className='teams-six'>
-               <div className='container'>
-                  <div className='section-title style-six text-center'>
-                     <h2 className='title wow fadeInUp' data-wow-delay='0.2s'>
-                        Las Jugadoras
-                     </h2>
-                     <p className='wow fadeInUp' data-wow-delay='0.4s'>
-                        Tomfoolery pukka chap I'm telling wellies James Bond william
-                        <br />
-                        chinwag Charles.
-                     </p>
-                  </div>
-
-                  <div className='team-slider-wrapper'>
-                     <div
-                        className='swiper-container wow fadeInUp'
-                        data-wow-delay='0.6s'
-                        id='team-slider'
-                        data-speed='700'
-                        data-autoplay='4000'
-                        data-loop='true'
-                        data-perpage='4'
-                        data-space='50'
-                        data-breakpoints='{"1024": {"slidesPerView": 3}, "768": {"slidesPerView": 2}, "480": {"slidesPerView": 1}}'>
-                        <div className='swiper-wrapper'>
-                           <div className='swiper-slide'>
-                              <div className='team-member-four wow fadeInUp' data-wow-delay='0.04s'>
-                                 <div className='member-avater'>
-                                    <img src='media/team/21.png' alt='avater' />
-                                    <ul className='member-social'>
-                                       <li>
-                                          <span href='list.html'>Ver más</span>
-                                       </li>
-                                    </ul>
-                                 </div>
-
-                                 <div className='team-info'>
-                                    <h3 className='name'>Pelican Steve</h3>
-                                    <h4 className='job'>Founder, CTO</h4>
-                                 </div>
-                              </div>
-                           </div>
-                           <div className='swiper-slide'>
-                              <div className='team-member-four wow fadeInUp' data-wow-delay='0.04s'>
-                                 <div className='member-avater'>
-                                    <img src='media/team/22.png' alt='avater' />
-                                    <ul className='member-social'>
-                                       <li>
-                                          <span href='list.html'>Ver más</span>
-                                       </li>
-                                    </ul>
-                                 </div>
-
-                                 <div className='team-info'>
-                                    <h3 className='name'>Lance Bogrol</h3>
-                                    <h4 className='job'>Marketer</h4>
-                                 </div>
-                              </div>
-                           </div>
-
-                           <div className='swiper-slide'>
-                              <div className='team-member-four wow fadeInUp' data-wow-delay='0.04s'>
-                                 <div className='member-avater'>
-                                    <img src='media/team/23.png' alt='avater' />
-                                    <ul className='member-social'>
-                                       <li>
-                                          <span href='list.html'>Ver más</span>
-                                       </li>
-                                    </ul>
-                                 </div>
-
-                                 <div className='team-info'>
-                                    <h3 className='name'>Thomas R. Toe</h3>
-                                    <h4 className='job'>Email Marketing</h4>
-                                 </div>
-                              </div>
-                           </div>
-
-                           <div className='swiper-slide'>
-                              <div className='team-member-four wow fadeInUp' data-wow-delay='0.04s'>
-                                 <div className='member-avater'>
-                                    <img src='media/team/24.png' alt='avater' />
-                                    <ul className='member-social'>
-                                       <li>
-                                          <span href='list.html'>Ver más</span>
-                                       </li>
-                                    </ul>
-                                 </div>
-
-                                 <div className='team-info'>
-                                    <h3 className='name'>Joss Sticks</h3>
-                                    <h4 className='job'>Designer</h4>
-                                 </div>
-                              </div>
-                           </div>
-                        </div>
-                     </div>
-                     <div className='swiper-pagination'></div>
                   </div>
                </div>
             </section>
@@ -245,7 +96,7 @@ export const Home = () => {
                            <article className='blog-post style-three wow pixFadeLeft' data-wow-delay='0.4s'>
                               <div className='feature-image'>
                                  <span>
-                                    <img src='media/blog/25.jpg' alt='blog-thumb' />
+                                    <img src='/25.jpg' alt='blog-thumb' />
                                  </span>
                               </div>
                               <div className='blog-content'>
@@ -272,7 +123,7 @@ export const Home = () => {
                            <article className='blog-post style-three wow pixFadeLeft' data-wow-delay='0.6s'>
                               <div className='feature-image'>
                                  <span>
-                                    <img src='media/blog/26.jpg' alt='blog-thumb' />
+                                    <img src='/26.jpg' alt='blog-thumb' />
                                  </span>
                               </div>
                               <div className='blog-content'>
@@ -299,7 +150,7 @@ export const Home = () => {
                            <article className='blog-post style-three wow pixFadeLeft' data-wow-delay='0.7s'>
                               <div className='feature-image'>
                                  <span>
-                                    <img src='media/blog/27.jpg' alt='blog-thumb' />
+                                    <img src='/27.jpg' alt='blog-thumb' />
                                  </span>
                               </div>
                               <div className='blog-content'>
@@ -325,7 +176,7 @@ export const Home = () => {
                            <article className='blog-post style-three wow pixFadeLeft' data-wow-delay='0.4s'>
                               <div className='feature-image'>
                                  <span>
-                                    <img src='media/blog/28.jpg' alt='blog-thumb' />
+                                    <img src='/28.jpg' alt='blog-thumb' />
                                  </span>
                               </div>
                               <div className='blog-content'>
@@ -352,7 +203,7 @@ export const Home = () => {
                            <article className='blog-post style-three wow pixFadeLeft' data-wow-delay='0.6s'>
                               <div className='feature-image'>
                                  <span>
-                                    <img src='media/blog/29.jpg' alt='blog-thumb' />
+                                    <img src='/29.jpg' alt='blog-thumb' />
                                  </span>
                               </div>
                               <div className='blog-content'>
@@ -379,7 +230,7 @@ export const Home = () => {
                            <article className='blog-post style-three wow pixFadeLeft' data-wow-delay='0.7s'>
                               <div className='feature-image'>
                                  <span>
-                                    <img src='media/blog/30.jpg' alt='blog-thumb' />
+                                    <img src='/30.jpg' alt='blog-thumb' />
                                  </span>
                               </div>
                               <div className='blog-content'>

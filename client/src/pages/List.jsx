@@ -2,7 +2,6 @@ import React from "react";
 import { useState, useEffect } from "react";
 import axios from "axios";
 import { Button } from "react-bootstrap";
-import { Footer } from "../components/Footer";
 import { HeaderNav } from "../components/HeaderNav";
 import JugadoraForm from "../components/JugadoraForm";
 import JugadoraList from "../components/JugadoraList";
@@ -38,22 +37,21 @@ export const List = () => {
          <HeaderNav></HeaderNav>
          <PageBanner></PageBanner>
          <div className='container'>
-            <div className='row mt-5 mb-4'>
-               <div className='col-6'>
+            <div className='row mt-5 mb-4 '>
+               <div className='col-lg-6 col-12 '>
                   <h2>Estadísticas</h2>
                </div>
-               <div className='col-6 d-flex justify-content-end'>
-                  <Button className='mr-5' variant='primary' onClick={() => setShowAddModal(true)}>
+               <div className='col-lg-6 col-12 d-flex justify-content-end'>
+                  <Button className='mr-lg-5 buttonMobile' variant='primary' onClick={() => setShowAddModal(true)}>
                      Añadir Jugadora
                   </Button>
                </div>
             </div>
             {showAddModal && <JugadoraForm onAdd={handleAddJugadora} onCancel={() => setShowAddModal(false)} />}
-            <div className='row'>
+            <div className='row cards'>
                <JugadoraList jugadoras={jugadoras} onEdit={handleEditJugadora} onDelete={handleDeleteJugadora} />
             </div>
          </div>
-         <Footer></Footer>
       </>
    );
 };

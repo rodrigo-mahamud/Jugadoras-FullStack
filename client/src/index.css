@@ -3322,6 +3322,13 @@ Download Two
 }
 
 @media (max-width: 991px) {
+   .cards {
+      margin: auto !important;
+   }
+   .buttonMobile {
+      width: 100%;
+      margin: unset;
+   }
    #footer .footer-inner {
       padding: 76px 0 22px;
    }
