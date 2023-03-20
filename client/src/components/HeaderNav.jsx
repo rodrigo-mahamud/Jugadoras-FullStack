@@ -261,7 +261,7 @@ export const HeaderNav = () => {
                            </Link>
                         </li>
                         <li>
-                           <Link as={Link} to='/partidos'>
+                           <Link as={Link} to='/Maches'>
                               Lista de Partidos
                            </Link>
                         </li>
