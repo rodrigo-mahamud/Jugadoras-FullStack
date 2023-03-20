@@ -31,9 +31,16 @@ const JugadoraForm = ({ onAdd }) => {
 
    return (
       <>
-         <Button variant='primary' onClick={() => setShowModal(true)}>
-            Añadir Jugadora
-         </Button>
+         <div className='row mt-5 mb-4'>
+            <div className='col-6 '>
+               <h2>Estadisticas</h2>
+            </div>
+            <div className='col-6 d-flex justify-content-end'>
+               <Button variant='primary' onClick={() => setShowModal(true)}>
+                  Añadir Jugadora
+               </Button>
+            </div>
+         </div>
 
          <Modal show={showModal} onHide={() => setShowModal(false)}>
             <Modal.Header>

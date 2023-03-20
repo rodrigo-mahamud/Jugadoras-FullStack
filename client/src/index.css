@@ -3309,6 +3309,17 @@ Download Two
 #footer.footer-app .footer-menu li a:hover {
    color: #000d61;
 }
+.btn-secondary {
+   color: #6c757d !important;
+   background-color: #ffffff !important;
+   border-color: #6c757d;
+}
+.modal {
+   display: flex !important;
+   backdrop-filter: blur(8px);
+   z-index: 999999999999999 !important;
+   align-items: center !important;
+}
 
 @media (max-width: 991px) {
    #footer .footer-inner {
