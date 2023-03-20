@@ -1,30 +1,71 @@
-import React from "react";
+import React, { useState } from "react";
+import axios from "axios";
+import { Button } from "react-bootstrap";
+import { Card, Col, Row } from "react-bootstrap";
+import JugadoraForm from "./JugadoraForm";
 
-const JugadoraList = ({ jugadoras }) => {
+const JugadoraList = ({ jugadoras, onEdit, onDelete }) => {
+   const [showEditModal, setShowEditModal] = useState(false);
+   const [jugadoraToEdit, setJugadoraToEdit] = useState(null);
+
+   const handleEdit = async (jugadoraId, jugadoraActualizada) => {
+      try {
+         const response = await axios.put(`http://127.0.0.1:5000/jugadoras/${jugadoraId}`, jugadoraActualizada);
+         onEdit(response.data);
+         setShowEditModal(false);
+         setJugadoraToEdit(null);
+      } catch (err) {
+         console.error(err);
+      }
+   };
+
+   const handleDelete = async (jugadoraId) => {
+      try {
+         await axios.delete(`http://127.0.0.1:5000/jugadoras/${jugadoraId}`);
+         onDelete(jugadoraId);
+      } catch (err) {
+         console.error(err);
+      }
+   };
+
+   const handleShowEditModal = (jugadora) => {
+      setJugadoraToEdit(jugadora);
+      setShowEditModal(true);
+   };
+
    return (
       <>
-         {jugadoras.map((jugadora, index) => (
-            <div key={index} className='col-lg-3 col-md-6 col-sm-12 mb-4'>
-               <div className='card'>
-                  <div className='card-body'>
-                     <div className='row'>
-                        <h5 className='card-title col-8'>{jugadora.nombre}</h5>
-                        <div className='col-4'>
-                           <div className='row'>
-                              <div className='edit w-50'> a</div>
-                              <div className='delete w-50'>b</div>
-                           </div>
-                        </div>
-                     </div>
-                     <p className='card-text'>
-                        Posición: {jugadora.posicion} <br />
-                        Equipo: {jugadora.equipo} <br />
-                        Goles: {jugadora.goles}
-                     </p>
-                  </div>
-               </div>
-            </div>
-         ))}
+         <Row xs={1} sm={2} md={4}>
+            {jugadoras.map((jugadora) => (
+               <Col key={jugadora._id} className='mb-4'>
+                  <Card>
+                     <Card.Body>
+                        <Card.Title className='mb-4'>{jugadora.nombre}</Card.Title>
+                        <Card.Text className='mb-1'>Equipo: {jugadora.equipo}</Card.Text>
+                        <Card.Text className='mb-1'>Posición: {jugadora.posicion}</Card.Text>
+                        <Card.Text className='mb-1'>Goles: {jugadora.goles}</Card.Text>
+                        <Button variant='secondary' className='mr-2 mt-4' onClick={() => handleShowEditModal(jugadora)}>
+                           Editar
+                        </Button>
+                        <Button variant='danger' className='mt-4' onClick={() => handleDelete(jugadora._id)}>
+                           Borrar
+                        </Button>
+                     </Card.Body>
+                  </Card>
+               </Col>
+            ))}
+         </Row>
+
+         {showEditModal && (
+            <JugadoraForm
+               jugadora={jugadoraToEdit}
+               onAdd={(jugadoraActualizada) => handleEdit(jugadoraToEdit._id, jugadoraActualizada)}
+               onCancel={() => {
+                  setShowEditModal(false);
+                  setJugadoraToEdit(null);
+               }}
+            />
+         )}
       </>
    );
 };

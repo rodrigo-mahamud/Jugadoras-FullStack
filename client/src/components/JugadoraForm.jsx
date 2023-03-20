@@ -2,12 +2,12 @@ import React, { useState } from "react";
 import axios from "axios";
 import { Modal, Button } from "react-bootstrap";
 
-const JugadoraForm = ({ onAdd }) => {
-   const [nombre, setNombre] = useState("");
-   const [posicion, setPosicion] = useState("");
-   const [equipo, setEquipo] = useState("");
-   const [goles, setGoles] = useState("");
-   const [showModal, setShowModal] = useState(false);
+const JugadoraForm = ({ onAdd, jugadora, onCancel }) => {
+   const [nombre, setNombre] = useState(jugadora ? jugadora.nombre : "");
+   const [posicion, setPosicion] = useState(jugadora ? jugadora.posicion : "");
+   const [equipo, setEquipo] = useState(jugadora ? jugadora.equipo : "");
+   const [goles, setGoles] = useState(jugadora ? jugadora.goles : "");
+   const [showModal, setShowModal] = useState(true);
 
    const handleSubmit = async (e) => {
       e.preventDefault();
@@ -15,36 +15,36 @@ const JugadoraForm = ({ onAdd }) => {
          alert("Por favor, completa todos los campos requeridos.");
          return;
       }
-      const nuevaJugadora = { nombre, posicion, equipo, goles: parseInt(goles) || 0 };
+      const nuevaJugadora = {
+         nombre,
+         posicion,
+         equipo,
+         goles: parseInt(goles) || 0,
+      };
+
       try {
-         const response = await axios.post("http://127.0.0.1:5000/jugadoras", nuevaJugadora);
+         const response = jugadora ? await axios.put(`http://127.0.0.1:5000/jugadoras/${jugadora._id}`, nuevaJugadora) : await axios.post("http://127.0.0.1:5000/jugadoras", nuevaJugadora);
          onAdd(response.data);
-         setNombre("");
-         setPosicion("");
-         setEquipo("");
-         setGoles("");
          setShowModal(false);
+         if (onCancel) {
+            onCancel();
+         }
       } catch (err) {
          console.error(err);
+      }
+   };
+   const handleCloseModal = () => {
+      setShowModal(false);
+      if (onCancel) {
+         onCancel();
       }
    };
 
    return (
       <>
-         <div className='row mt-5 mb-4'>
-            <div className='col-6 '>
-               <h2>Estadisticas</h2>
-            </div>
-            <div className='col-6 d-flex justify-content-end'>
-               <Button variant='primary' onClick={() => setShowModal(true)}>
-                  Añadir Jugadora
-               </Button>
-            </div>
-         </div>
-
-         <Modal show={showModal} onHide={() => setShowModal(false)}>
+         <Modal show={showModal} onHide={handleCloseModal}>
             <Modal.Header>
-               <Modal.Title>Añadir Jugadora</Modal.Title>
+               <Modal.Title>{jugadora ? "Editar Jugadora" : "Añadir Jugadora"}</Modal.Title>
             </Modal.Header>
             <Modal.Body>
                <form onSubmit={handleSubmit}>
@@ -55,11 +55,11 @@ const JugadoraForm = ({ onAdd }) => {
                </form>
             </Modal.Body>
             <Modal.Footer>
-               <Button variant='secondary' onClick={() => setShowModal(false)}>
+               <Button variant='secondary' onClick={handleCloseModal}>
                   Cerrar
                </Button>
                <Button variant='primary' onClick={handleSubmit}>
-                  Agregar Jugadora
+                  {jugadora ? "Actualizar Jugadora" : "Agregar Jugadora"}
                </Button>
             </Modal.Footer>
          </Modal>
